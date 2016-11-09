@@ -6,24 +6,7 @@
 <meta content='width=device-width, initial-scale=1' name='viewport'>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-function extractTweets() {
-        var tweets = $('#tweetHolder iframe').contents().find('li.tweet');
-        var tweetObjects = [];
-        for (var i=0; i < tweets.length; ++i) {
-                var cur = $(tweets[i]);
-                
-                var tweet = {};
-                tweet.authorFullName = cur.find("span.full-name span.p-name").html();
-                tweet.authorUserName = cur.find("span.p-nickname b").html();
-                tweet.date = cur.find("a.u-url").attr("data-datetime");
-                tweet.id = cur.attr("data-tweet-id");
-                tweet.text = $.trim(cur.find("p.e-entry-title").html());
-                tweetObjects.push(tweet);
-        }
-        return tweetObjects;
-}
-</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 <style>
 body {
   background-color:white;
@@ -40,8 +23,8 @@ body {
 </style>
 </head>
 <body>
-<div id="tweetHolder" style="display:none">
-        <a class="twitter-timeline" data-dnt=true href="https://twitter.com/UnquietCode" data-widget-id="246069621969518592"></a>
+<div id="twitter-social-profiles" class="twitter-social-profiles">
+<a class="twitter-timeline"  href="https://twitter.com/duipee" data-widget-id="568394463483944960">Tweets by @duipee</a>
 </div>
 
   </body>
